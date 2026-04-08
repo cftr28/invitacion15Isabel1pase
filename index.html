@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isabel Kathalina | Mis XV Años</title>
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cftr28.github.io/invitacion15Isabel/">
-    <meta property="og:title" content="💌 ¡Estás invitado a mis XV Años - Isabel Kathalina!">
-    <meta property="og:description" content="Toca aquí para abrir tu sobre y ver los detalles de mi fiesta.">
+    <link rel="image_src" href="https://cftr28.github.io/invitacion15Isabel/link.png">
     <meta property="og:image" itemprop="image" content="https://cftr28.github.io/invitacion15Isabel/link.png">
     <meta property="og:image:secure_url" content="https://cftr28.github.io/invitacion15Isabel/link.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    
+    <meta property="og:title" content="💌 ¡Estás invitado a mis XV Años - Isabel Kathalina!">
+    <meta property="og:description" content="Toca aquí para abrir tu sobre y ver los detalles de mi fiesta.">
+    <meta property="og:url" content="https://cftr28.github.io/invitacion15Isabel/">
+    <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="💌 ¡Estás invitado a mis XV Años - Isabel Kathalina!">
-    <meta name="twitter:description" content="Toca aquí para abrir tu sobre y ver los detalles de mi fiesta.">
     <meta name="twitter:image" content="https://cftr28.github.io/invitacion15Isabel/link.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -43,7 +43,6 @@
             background-attachment: fixed;
         }
 
-        /* --- PORTADA (SOBRE) --- */
         #portada-wrapper {
             position: fixed;
             inset: 0;
@@ -84,7 +83,6 @@
 
         #portada-wrapper.hidden { opacity: 0; visibility: hidden; }
 
-        /* --- CONTENIDO --- */
         #main-content { display: none; }
 
         .hero {
@@ -227,7 +225,7 @@
                 <p><strong>Local:</strong> "El Detalle"</p>
                 <p><strong>Ubicación:</strong> San Cayetano Alto, Calles José Coronel y Lauro Ludeña</p>
             </div>
-            <a href="https://www.google.com/maps/search/?api=1&query=-3.985,-79.198" target="_blank" class="btn">Ver Ubicación</a>
+            <a href="https://maps.app.goo.gl/P3pCjN8DkYf9uM2H7" target="_blank" class="btn">Ver Ubicación</a>
         </section>
 
         <section class="section">
@@ -251,7 +249,7 @@
     <script>
         function abrirInvitacion() {
             const audio = document.getElementById('miMusica');
-            audio.play().catch(e => console.log("Audio bloqueado por navegador"));
+            audio.play().catch(e => console.log("Interacción necesaria para audio"));
             
             document.getElementById('portada-wrapper').classList.add('hidden');
             document.getElementById('main-content').style.display = 'block';
