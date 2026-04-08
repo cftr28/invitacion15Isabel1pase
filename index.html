@@ -5,20 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Isabel Kathalina | Mis XV Años</title>
 
-    <link rel="image_src" href="https://cftr28.github.io/invitacion15Isabel/fondos.jpg">
-    <meta property="og:title" content="💌 ¡Estás invitado a mis XV Años - Isabel Kathalina!">
-    <meta property="og:description" content="Toca aquí para abrir tu sobre y ver los detalles de mi fiesta.">
-    <meta property="og:image" content="https://cftr28.github.io/invitacion15Isabel/fondos.jpg">
-    <meta property="og:image:secure_url" content="https://cftr28.github.io/invitacion15Isabel/fondos.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://cftr28.github.io/invitacion15Isabel/">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://cftr28.github.io/invitacion15Isabel/fondos.jpg">
-
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -26,26 +12,20 @@
     <style>
         :root {
             --oro-deep: #b59410;
+            --oro-brillante: #f9e18e;
             --text-dark: #5c4b1a;
             --white-glass: rgba(255, 255, 255, 0.92);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* FONDO FIJO PARA NITIDEZ EN IOS Y ANDROID */
         .background-fixed {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background-image: url('fondo1.png');
             background-size: cover;
             background-position: center center;
-            background-repeat: no-repeat;
             z-index: -1;
-            transform: translateZ(0);
-            -webkit-transform: translateZ(0);
         }
 
         body {
@@ -55,6 +35,7 @@
             overflow-x: hidden;
         }
 
+        /* PORTADA */
         #portada-wrapper {
             position: fixed;
             inset: 0;
@@ -78,7 +59,6 @@
             border-radius: 15px;
             text-align: center;
             animation: flotar 3s infinite ease-in-out;
-            -webkit-backface-visibility: hidden;
         }
 
         @keyframes flotar {
@@ -87,9 +67,9 @@
         }
 
         #portada-wrapper.hidden { opacity: 0; visibility: hidden; }
-
         #main-content { display: none; position: relative; z-index: 1; }
 
+        /* SECCIÓN HERO - AJUSTE DE NOMBRE */
         .hero {
             height: 100vh;
             display: flex;
@@ -103,7 +83,13 @@
             font-family: 'Great Vibes', cursive;
             font-size: clamp(45px, 12vw, 85px); 
             opacity: 0;
-            transform: translateY(20px);
+            /* Subido ligeramente (3mm aprox en pantalla) y efecto oro con borde negro */
+            transform: translateY(10px); 
+            background: linear-gradient(to bottom, #f9e18e 0%, #d4af37 50%, #b59410 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(2px 2px 1px #000); /* El toque negro solicitado */
+            margin-bottom: 10px; 
         }
 
         .nombre-container p {
@@ -111,14 +97,19 @@
             font-size: clamp(55px, 15vw, 105px); 
             color: var(--oro-deep);
             opacity: 0;
-            margin-top: -15px;
+            margin-top: -20px;
         }
 
-        .animate-name { animation: entrada 1s forwards ease-out; }
+        .animate-name { animation: entradaNombre 1s forwards ease-out; }
         .animate-sub { animation: entrada 1s forwards ease-out 0.4s; }
+
+        @keyframes entradaNombre { 
+            to { opacity: 1; transform: translateY(-15px); } /* Sube al aparecer */
+        }
 
         @keyframes entrada { to { opacity: 1; transform: translateY(0); } }
 
+        /* RESTO DE ESTILOS */
         .section { padding: 50px 20px; text-align: center; }
         .card-info {
             max-width: 400px;
@@ -128,7 +119,6 @@
             border-radius: 20px;
             border: 1px solid rgba(181, 148, 16, 0.2);
             box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            -webkit-backdrop-filter: blur(8px);
             backdrop-filter: blur(8px);
         }
 
@@ -144,18 +134,15 @@
             text-transform: uppercase;
             font-size: 0.75rem;
             letter-spacing: 1px;
-            transition: transform 0.2s;
         }
         
-        .btn:active { transform: scale(0.95); }
-        
         .fa-solid, .fa-regular { color: var(--oro-deep); margin-right: 8px; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
     </style>
 </head>
 <body>
 
     <div class="background-fixed"></div>
-
     <audio id="miMusica" src="musica.mp3" preload="auto" loop></audio>
 
     <div id="portada-wrapper" onclick="abrirInvitacion()">
@@ -185,13 +172,13 @@
                 <p><strong>Local:</strong> "El Detalle"</p>
                 <p style="font-size: 0.85rem;">San Cayetano Alto, Calles José Coronel y Lauro Ludeña</p>
             </div>
-            <a href="https://maps.google.com/?q=San+Cayetano+Alto+Loja" target="_blank" class="btn">Ver Ubicación</a>
+            <a href="https://www.google.com/maps?q=San+Cayetano+Alto+Loja" target="_blank" class="btn">Ver Ubicación</a>
         </section>
 
         <section class="section">
             <h2 style="font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--oro-deep);">Lluvia de Sobres</h2>
             <div class="card-info" style="text-align: left;">
-                <p><i class="fa-solid fa-building-columns"></i> <strong>Banco de Loja</strong></p>
+                <p><i class="fa-solid fa-building-columns"></i> <strong>Cta. Ahorros Banco de Loja</strong></p>
                 <p><i class="fa-solid fa-user"></i> <strong>Kathalina Sanchez</strong></p>
                 <p><i class="fa-solid fa-piggy-bank"></i> <strong>Cta:</strong> 2905756512</p>
                 <p><i class="fa-solid fa-id-card"></i> <strong>C.I.:</strong> 1150700308</p>
@@ -206,7 +193,7 @@
     <script>
         function abrirInvitacion() {
             const audio = document.getElementById('miMusica');
-            audio.play().catch(e => console.log("Interacción necesaria para audio"));
+            audio.play().catch(e => console.log("Interacción necesaria"));
             
             document.getElementById('portada-wrapper').classList.add('hidden');
             document.getElementById('main-content').style.display = 'block';
@@ -226,8 +213,5 @@
             });
         }
     </script>
-    <style>
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-    </style>
 </body>
 </html>
