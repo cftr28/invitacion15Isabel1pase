@@ -10,6 +10,7 @@
     <meta property="og:title" content="💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!">
     <meta property="og:description" content="Acompáñame a celebrar este día tan especial. 18 de Abril 2026.">
     <meta property="og:image" content="https://raw.githubusercontent.com/cftr28/invitacion15Isabelpases/main/preview.png">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
@@ -107,6 +108,23 @@
             line-height: 1;
         }
 
+        /* INDICADOR DESLIZAR DISCRETO */
+        #scroller-indicator {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            color: var(--oro-deep);
+            z-index: 1000;
+            opacity: 0.8;
+            animation: bounce 2s infinite ease-in-out;
+        }
+        #scroller-indicator i { font-size: 0.9rem; }
+        #scroller-indicator span { font-size: 0.45rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
         /* CONTADOR */
         .countdown-container {
             display: flex;
@@ -124,37 +142,18 @@
         .time-box span { display: block; font-size: 1.1rem; font-weight: 600; }
         .time-box small { font-size: 0.55rem; text-transform: uppercase; }
 
-        /* SCROLLER INDICATOR */
-        #scroller-indicator {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: #fff;
-            background-color: rgba(181, 148, 16, 0.9);
-            padding: 5px 12px;
-            border-radius: 20px;
-            z-index: 1000;
-            animation: bounce 2s infinite ease-in-out;
-            display: none;
-        }
-
         /* SECCIONES */
         .section { padding: 50px 20px; text-align: center; }
         .titulo-section { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--oro-deep); margin-bottom: 25px; }
         
         .card-info {
             max-width: 360px;
-            margin: 0 auto 20px;
+            margin: 0 auto 15px;
             background: var(--white-glass);
             padding: 20px;
             border-radius: 15px;
             border: 1px solid rgba(181, 148, 16, 0.2);
             backdrop-filter: blur(8px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .btn {
@@ -170,10 +169,17 @@
             margin-top: 10px;
             border: none;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(181, 148, 16, 0.3);
         }
 
-        @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -5px); } }
+        /* ITINERARIO */
+        .luxury-itinerary { position: relative; max-width: 450px; margin: 0 auto; padding: 10px 0; }
+        .itinerary-step { display: flex; align-items: center; margin-bottom: 25px; margin-left: 20px; }
+        .step-icon-wrap { width: 40px; height: 40px; background: var(--oro-metalico); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; flex-shrink: 0; margin-right: 15px; }
+        .step-info { background: var(--white-glass); padding: 10px 15px; border-radius: 10px; text-align: left; flex-grow: 1; }
+        .step-time { font-size: 0.7rem; color: var(--oro-deep); font-weight: bold; }
+        .step-desc { font-size: 0.95rem; }
+
+        @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); opacity: 0.5; } 50% { transform: translate(-50%, -10px); opacity: 1; } }
         @keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     </style>
 </head>
@@ -197,10 +203,47 @@
 
     <div id="main-content">
         <section class="hero">
-            <div class="fecha-top">SÁBADO . 18 . ABRIL . 2026</div>
+            <div class="fecha-top">18 . ABRIL . 2026</div>
             <div class="nombre-container">
                 <h1>Isabel Kathalina</h1>
                 <p>Mis 15 Años</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="titulo-section">Un lugar para ti</h2>
+            <div class="card-info" style="border: 2px dashed var(--oro-deep); background: #fffaf0;">
+                <i class="fa-solid fa-star" style="color: var(--oro-deep); font-size: 1.5rem; margin-bottom: 10px;"></i>
+                <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 5px;">Pase Personal</p>
+                <p style="font-size: 0.85rem; font-style: italic; color: #8a6d0a; line-height: 1.4;">"He reservado <b>1 lugar</b> muy especial para compartir este momento contigo."</p>
+            </div>
+
+            <div id="timer-invitacion" style="margin-top: 25px;">
+                <p style="font-weight: 600; font-size: 0.7rem; color: var(--oro-deep); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Faltan solo:</p>
+                <div class="countdown-container">
+                    <div class="time-box"><span id="days">00</span><small>Días</small></div>
+                    <div class="time-box"><span id="hours">00</span><small>Hrs</small></div>
+                    <div class="time-box"><span id="mins">00</span><small>Min</small></div>
+                    <div class="time-box"><span id="secs">00</span><small>Seg</small></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="titulo-section">Itinerario</h2>
+            <div class="luxury-itinerary">
+                <div class="itinerary-step">
+                    <div class="step-icon-wrap"><i class="fa-solid fa-church"></i></div>
+                    <div class="step-info"><span class="step-time">18:00 HRS</span><p class="step-desc">Ceremonia Religiosa</p></div>
+                </div>
+                <div class="itinerary-step">
+                    <div class="step-icon-wrap"><i class="fa-solid fa-glass-cheers"></i></div>
+                    <div class="step-info"><span class="step-time">20:00 HRS</span><p class="step-desc">Recepción y Brindis</p></div>
+                </div>
+                <div class="itinerary-step">
+                    <div class="step-icon-wrap"><i class="fa-solid fa-utensils"></i></div>
+                    <div class="step-info"><span class="step-time">21:00 HRS</span><p class="step-desc">Cena de Gala</p></div>
+                </div>
             </div>
         </section>
 
@@ -209,42 +252,38 @@
             
             <div class="card-info">
                 <i class="fa-solid fa-church" style="font-size: 1.8rem; color: var(--oro-deep); margin-bottom: 10px;"></i>
-                <h3 style="color: var(--oro-deep); margin-bottom: 5px; font-size: 1.2rem;">Ceremonia Religiosa</h3>
-                <p style="font-weight: 600;">IGLESIA: POR CONFIRMAR</p>
-                <p style="font-size: 0.85rem; margin-top: 5px;">Hora: 18:00 hrs</p>
-                <a href="#" target="_blank" class="btn"><i class="fa-solid fa-location-dot"></i> GPS Iglesia</a>
+                <h3 style="color: var(--oro-deep); margin-bottom: 5px; font-size: 1.2rem;">Ceremonia</h3>
+                <p><strong>Iglesia: Por Confirmar</strong></p>
+                <p style="font-size: 0.8rem; margin: 8px 0;">Hora: 18:00 hrs</p>
+                <a href="#" target="_blank" class="btn"><i class="fa-solid fa-location-dot"></i> GPS Misa</a>
             </div>
 
             <div class="card-info">
                 <i class="fa-solid fa-glass-cheers" style="font-size: 1.8rem; color: var(--oro-deep); margin-bottom: 10px;"></i>
                 <h3 style="color: var(--oro-deep); margin-bottom: 5px; font-size: 1.2rem;">Recepción</h3>
-                <p><strong>Local: "El Detalle"</strong></p>
-                <p style="font-size: 0.85rem; margin: 8px 0; line-height: 1.4;">
-                    San Cayetano Alto<br>
-                    Calles José Coronel y Lauro Ludeña<br>
-                    (Antes de la falla geológica)
-                </p>
-                <p style="font-weight: 600; color: var(--oro-deep);">20:00 Horas</p>
-                <a href="https://maps.google.com/?q=-4.0016,-79.2012" target="_blank" class="btn"><i class="fa-solid fa-location-dot"></i> GPS Local</a>
+                <p><strong>Local "El Detalle"</strong></p>
+                <p style="font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">San Cayetano Alto (Calles José Coronel y Lauro Ludeña)<br>Antes de la falla geológica</p>
+                <p style="font-weight: bold; color: var(--oro-deep);">20:00 HRS</p>
+                <a href="http://googleusercontent.com/maps.google.com/5" target="_blank" class="btn"><i class="fa-solid fa-location-dot"></i> GPS Local</a>
             </div>
         </section>
 
         <section class="section" style="padding-bottom: 100px;">
-            <p style="margin-bottom: 15px; font-weight: 600;">¿Me acompañas en este día?</p>
-            <a href="https://wa.me/593988456721?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20tus%20XV%20Isabel" class="btn" style="padding: 15px 35px;">Confirmar Asistencia</a>
+            <a href="https://wa.me/593988456721?text=¡Hola!%20Confirmo%20mi%20asistencia" class="btn" style="padding: 15px 35px;">Confirmar Asistencia</a>
         </section>
     </div>
 
     <script>
         const audio = document.getElementById('miMusica');
         const musicIcon = document.getElementById('music-icon');
+        const scroller = document.getElementById('scroller-indicator');
 
         function abrirInvitacion() {
             audio.play().catch(e => console.log("Audio requiere interacción"));
             document.getElementById('portada-wrapper').classList.add('hidden');
             document.getElementById('main-content').style.display = 'block';
             document.getElementById('music-control').style.display = 'flex';
-            document.getElementById('scroller-indicator').style.display = 'flex';
+            scroller.style.display = 'flex';
 
             confetti({
                 particleCount: 150,
@@ -265,19 +304,22 @@
         }
 
         window.onscroll = function() {
-            const scroller = document.getElementById('scroller-indicator');
-            if (window.scrollY > 50) {
+            if (window.scrollY > 40) {
                 scroller.style.opacity = '0';
-                scroller.style.visibility = 'hidden';
             } else {
-                scroller.style.opacity = '1';
-                scroller.style.visibility = 'visible';
+                scroller.style.opacity = '0.8';
             }
         };
 
-        // Contador para el 18 de Abril 2026
         const countdownDate = new Date("April 18, 2026 18:00:00").getTime();
-        // (Opcional: puedes re-añadir el bloque del timer si quieres que aparezca abajo)
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("mins").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("secs").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
     </script>
 </body>
 </html>
