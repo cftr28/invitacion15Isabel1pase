@@ -6,24 +6,16 @@
     
     <title>💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!</title>
     
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!">
-    <meta property="og:description" content="Acompáñame a celebrar este día tan especial. 18 de Abril 2026.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/cftr28/invitacion15Isabelpases/main/preview.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
     <style>
         :root {
-            --oro-deep: #b59410;
-            --oro-brillante: #d4af37;
+            --oro-oscuro: #8a6d0a; 
+            --oro-vivo: #ffcc00; /* Dorado más vibrante para "Mis XV" */
             --oro-metalico: linear-gradient(135deg, #d4af37 0%, #f9e18e 50%, #b59410 100%);
-            --text-dark: #5c4b1a;
+            --text-dark: #443710; 
             --white-glass: rgba(255, 255, 255, 0.95);
         }
 
@@ -74,56 +66,58 @@
         #portada-wrapper.hidden { opacity: 0; visibility: hidden; }
         #main-content { display: none; position: relative; z-index: 1; }
 
-        /* HERO */
+        /* HERO - ELEMENTOS MÁS ARRIBA */
         .hero {
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start; /* Alineado arriba */
+            padding-top: 15vh; /* Espacio desde el borde superior */
             align-items: center;
             text-align: center;
         }
 
         .fecha-top {
             font-weight: 600;
-            letter-spacing: 3px;
-            font-size: 0.8rem;
-            margin-bottom: 5px;
-            color: var(--oro-deep);
+            letter-spacing: 5px;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            color: var(--oro-oscuro);
         }
 
         .nombre-container h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(45px, 12vw, 75px);
-            color: var(--oro-deep);
-            line-height: 1.1;
+            font-size: clamp(50px, 14vw, 85px);
+            color: var(--oro-oscuro); 
+            line-height: 1;
+            margin-bottom: 20px;
         }
 
         .nombre-container p {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(55px, 16vw, 90px);
-            color: #c5a022; 
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-            margin-top: -5px;
-            line-height: 1;
+            font-size: clamp(60px, 18vw, 100px);
+            color: var(--oro-vivo); /* Dorado más intenso */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+            line-height: 0.9;
         }
 
-        /* INDICADOR DESLIZAR DISCRETO */
+        /* INDICADOR DESLIZAR BLANCO */
         #scroller-indicator {
             position: fixed;
-            bottom: 15px;
+            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
             display: none;
             flex-direction: column;
             align-items: center;
-            color: var(--oro-deep);
+            color: #ffffff; /* Ahora es blanco */
+            text-shadow: 0px 0px 8px rgba(0,0,0,0.5); /* Sombra para que se vea en fondos claros */
             z-index: 1000;
-            opacity: 0.8;
+            opacity: 0.9;
             animation: bounce 2s infinite ease-in-out;
         }
-        #scroller-indicator i { font-size: 0.9rem; }
-        #scroller-indicator span { font-size: 0.45rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+        #scroller-indicator i { font-size: 1.4rem; }
+        #scroller-indicator span { font-size: 0.6rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; }
 
         /* CONTADOR */
         .countdown-container {
@@ -135,51 +129,51 @@
         .time-box {
             background: var(--oro-metalico);
             color: white;
-            min-width: 55px;
-            padding: 8px 4px;
-            border-radius: 10px;
+            min-width: 58px;
+            padding: 10px 5px;
+            border-radius: 12px;
         }
-        .time-box span { display: block; font-size: 1.1rem; font-weight: 600; }
+        .time-box span { display: block; font-size: 1.2rem; font-weight: 600; }
         .time-box small { font-size: 0.55rem; text-transform: uppercase; }
 
         /* SECCIONES */
-        .section { padding: 50px 20px; text-align: center; }
-        .titulo-section { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--oro-deep); margin-bottom: 25px; }
+        .section { padding: 70px 20px; text-align: center; }
+        .titulo-section { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--oro-oscuro); margin-bottom: 30px; }
         
         .card-info {
             max-width: 360px;
-            margin: 0 auto 15px;
+            margin: 0 auto 20px;
             background: var(--white-glass);
-            padding: 20px;
-            border-radius: 15px;
-            border: 1px solid rgba(181, 148, 16, 0.2);
-            backdrop-filter: blur(8px);
+            padding: 30px 25px;
+            border-radius: 20px;
+            border: 1px solid rgba(138, 109, 10, 0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 24px;
+            padding: 14px 30px;
             background: var(--oro-metalico);
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.75rem;
-            margin-top: 10px;
+            font-size: 0.8rem;
+            margin-top: 15px;
             border: none;
             cursor: pointer;
         }
 
         /* ITINERARIO */
-        .luxury-itinerary { position: relative; max-width: 450px; margin: 0 auto; padding: 10px 0; }
-        .itinerary-step { display: flex; align-items: center; margin-bottom: 25px; margin-left: 20px; }
-        .step-icon-wrap { width: 40px; height: 40px; background: var(--oro-metalico); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; flex-shrink: 0; margin-right: 15px; }
-        .step-info { background: var(--white-glass); padding: 10px 15px; border-radius: 10px; text-align: left; flex-grow: 1; }
-        .step-time { font-size: 0.7rem; color: var(--oro-deep); font-weight: bold; }
-        .step-desc { font-size: 0.95rem; }
+        .luxury-itinerary { position: relative; max-width: 450px; margin: 0 auto; }
+        .itinerary-step { display: flex; align-items: center; margin-bottom: 30px; margin-left: 20px; }
+        .step-icon-wrap { width: 45px; height: 45px; background: var(--oro-metalico); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; flex-shrink: 0; margin-right: 15px; }
+        .step-info { background: var(--white-glass); padding: 12px 18px; border-radius: 12px; text-align: left; flex-grow: 1; }
+        .step-time { font-size: 0.75rem; color: var(--oro-oscuro); font-weight: bold; }
+        .step-desc { font-size: 1rem; }
 
-        @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); opacity: 0.5; } 50% { transform: translate(-50%, -10px); opacity: 1; } }
+        @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -10px); } }
         @keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
     </style>
 </head>
@@ -190,12 +184,12 @@
 
     <div id="portada-wrapper" onclick="abrirInvitacion()">
         <div class="placa-oro">
-            <h2 style="font-family: 'Great Vibes', cursive; font-size: 2rem;">Isabel Kathalina</h2>
-            <p style="font-size: 0.6rem; letter-spacing: 2px; margin-top: 8px; font-weight: bold; color: white;">TOCA PARA ABRIR</p>
+            <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.2rem;">Isabel Kathalina</h2>
+            <p style="font-size: 0.65rem; letter-spacing: 2px; margin-top: 10px; font-weight: bold; color: white;">TOCA PARA ABRIR</p>
         </div>
     </div>
 
-    <div id="music-control" onclick="toggleMusica()" style="position:fixed; bottom:20px; right:20px; width:40px; height:40px; background:var(--oro-metalico); border-radius:50%; display:none; justify-content:center; align-items:center; color:white; z-index:1001; cursor:pointer;">
+    <div id="music-control" onclick="toggleMusica()" style="position:fixed; bottom:20px; right:20px; width:45px; height:45px; background:var(--oro-metalico); border-radius:50%; display:none; justify-content:center; align-items:center; color:white; z-index:1001; cursor:pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
         <i id="music-icon" class="fa-solid fa-pause"></i>
     </div>
 
@@ -212,14 +206,14 @@
 
         <section class="section">
             <h2 class="titulo-section">Un lugar para ti</h2>
-            <div class="card-info" style="border: 2px dashed var(--oro-deep); background: #fffaf0;">
-                <i class="fa-solid fa-star" style="color: var(--oro-deep); font-size: 1.5rem; margin-bottom: 10px;"></i>
-                <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 5px;">Pase Personal</p>
-                <p style="font-size: 0.85rem; font-style: italic; color: #8a6d0a; line-height: 1.4;">"He reservado <b>1 lugar</b> muy especial para compartir este momento contigo."</p>
+            <div class="card-info" style="border: 2px dashed var(--oro-oscuro); background: #fffaf0;">
+                <i class="fa-solid fa-star" style="color: var(--oro-oscuro); font-size: 1.8rem; margin-bottom: 12px;"></i>
+                <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 8px;">Pase Personal</p>
+                <p style="font-size: 0.9rem; font-style: italic; color: #6e5606; line-height: 1.5;">"He reservado <b>1 lugar</b> muy especial para compartir este momento contigo."</p>
             </div>
 
-            <div id="timer-invitacion" style="margin-top: 25px;">
-                <p style="font-weight: 600; font-size: 0.7rem; color: var(--oro-deep); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Faltan solo:</p>
+            <div id="timer-invitacion" style="margin-top: 40px;">
+                <p style="font-weight: 600; font-size: 0.75rem; color: var(--oro-oscuro); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">Faltan solo:</p>
                 <div class="countdown-container">
                     <div class="time-box"><span id="days">00</span><small>Días</small></div>
                     <div class="time-box"><span id="hours">00</span><small>Hrs</small></div>
@@ -251,25 +245,25 @@
             <h2 class="titulo-section">¿Dónde y Cuándo?</h2>
             
             <div class="card-info">
-                <i class="fa-solid fa-church" style="font-size: 1.8rem; color: var(--oro-deep); margin-bottom: 10px;"></i>
-                <h3 style="color: var(--oro-deep); margin-bottom: 5px; font-size: 1.2rem;">Ceremonia</h3>
+                <i class="fa-solid fa-church" style="font-size: 2rem; color: var(--oro-oscuro); margin-bottom: 12px;"></i>
+                <h3 style="color: var(--oro-oscuro); margin-bottom: 8px; font-size: 1.3rem;">Ceremonia</h3>
                 <p><strong>Iglesia: Por Confirmar</strong></p>
-                <p style="font-size: 0.8rem; margin: 8px 0;">Hora: 18:00 hrs</p>
+                <p style="font-size: 0.9rem; margin: 10px 0;">Hora: 18:00 hrs</p>
                 <a href="#" target="_blank" class="btn"><i class="fa-solid fa-location-dot"></i> GPS Misa</a>
             </div>
 
             <div class="card-info">
-                <i class="fa-solid fa-glass-cheers" style="font-size: 1.8rem; color: var(--oro-deep); margin-bottom: 10px;"></i>
-                <h3 style="color: var(--oro-deep); margin-bottom: 5px; font-size: 1.2rem;">Recepción</h3>
+                <i class="fa-solid fa-glass-cheers" style="font-size: 2rem; color: var(--oro-oscuro); margin-bottom: 12px;"></i>
+                <h3 style="color: var(--oro-oscuro); margin-bottom: 8px; font-size: 1.3rem;">Recepción</h3>
                 <p><strong>Local "El Detalle"</strong></p>
-                <p style="font-size: 0.8rem; margin: 8px 0; line-height: 1.4;">San Cayetano Alto (Calles José Coronel y Lauro Ludeña)<br>Antes de la falla geológica</p>
-                <p style="font-weight: bold; color: var(--oro-deep);">20:00 HRS</p>
-                <a href="http://googleusercontent.com/maps.google.com/5" target="_blank" class="btn"><i class="fa-solid fa-location-dot"></i> GPS Local</a>
+                <p style="font-size: 0.85rem; margin: 10px 0; line-height: 1.5;">San Cayetano Alto (Calles José Coronel y Lauro Ludeña)<br>Antes de la falla geológica</p>
+                <p style="font-weight: bold; color: var(--oro-oscuro);">20:00 HRS</p>
+                <a href="https://maps.google.com" target="_blank" class="btn"><i class="fa-solid fa-location-dot"></i> GPS Local</a>
             </div>
         </section>
 
-        <section class="section" style="padding-bottom: 100px;">
-            <a href="https://wa.me/593988456721?text=¡Hola!%20Confirmo%20mi%20asistencia" class="btn" style="padding: 15px 35px;">Confirmar Asistencia</a>
+        <section class="section" style="padding-bottom: 140px;">
+            <a href="https://wa.me/593988456721?text=¡Hola!%20Confirmo%20mi%20asistencia" class="btn" style="padding: 16px 40px; font-size: 0.9rem;">Confirmar Asistencia</a>
         </section>
     </div>
 
@@ -307,7 +301,7 @@
             if (window.scrollY > 40) {
                 scroller.style.opacity = '0';
             } else {
-                scroller.style.opacity = '0.8';
+                scroller.style.opacity = '0.9';
             }
         };
 
