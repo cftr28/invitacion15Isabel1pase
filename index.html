@@ -9,15 +9,16 @@
     <meta property="og:url" content="https://cftr28.github.io/invitacion15Isabel/">
     <meta property="og:title" content="💌 ¡Estás invitado a mis XV Años - Isabel Kathalina!">
     <meta property="og:description" content="Toca aquí para abrir tu sobre y ver los detalles de mi fiesta.">
-    <meta property="og:image" content="https://cftr28.github.io/invitacion15Isabel/link.png">
+    <meta property="og:image" itemprop="image" content="https://cftr28.github.io/invitacion15Isabel/link.png">
     <meta property="og:image:secure_url" content="https://cftr28.github.io/invitacion15Isabel/link.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
 
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="💌 ¡Estás invitado a mis XV Años - Isabel Kathalina!">
+    <meta name="twitter:description" content="Toca aquí para abrir tu sobre y ver los detalles de mi fiesta.">
     <meta name="twitter:image" content="https://cftr28.github.io/invitacion15Isabel/link.png">
-    <link rel="image_src" href="https://cftr28.github.io/invitacion15Isabel/link.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,7 +37,7 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #fdf8f2;
             overflow-x: hidden;
-            background-image: url('fondo1.png'); /* Fondo restaurado */
+            background-image: url('fondo1.png'); 
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -47,7 +48,7 @@
             position: fixed;
             inset: 0;
             z-index: 9999;
-            background-image: url('fondo1.png'); /* Fondo restaurado */
+            background-image: url('fondo1.png');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -58,8 +59,8 @@
         }
 
         .placa-oro {
-            width: 260px;
-            height: 160px;
+            width: 280px;
+            height: 180px;
             background: linear-gradient(135deg, #d4af37 0%, #f9e18e 50%, #b59410 100%);
             border: 2px solid #fff;
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
@@ -118,7 +119,6 @@
 
         @keyframes entradaNombre { to { opacity: 1; transform: translateY(0); } }
 
-        /* --- INDICADOR DESLIZA (SALTANDO) --- */
         .indicador-desliza {
             position: absolute;
             bottom: 40px;
@@ -151,7 +151,6 @@
             60% { transform: translateY(-5px); }
         }
 
-        /* --- SECCIONES --- */
         .section {
             padding: 80px 20px;
             text-align: center;
@@ -228,7 +227,7 @@
                 <p><strong>Local:</strong> "El Detalle"</p>
                 <p><strong>Ubicación:</strong> San Cayetano Alto, Calles José Coronel y Lauro Ludeña</p>
             </div>
-            <a href="https://maps.google.com/?q=-4.0016,-79.2012" target="_blank" class="btn">Ver Ubicación</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=-3.985,-79.198" target="_blank" class="btn">Ver Ubicación</a>
         </section>
 
         <section class="section">
@@ -245,13 +244,14 @@
 
         <section class="section" style="padding-bottom: 100px;">
             <h2>Confirmación</h2>
-            <a href="https://wa.me/593900000000?text=Hola!%20Confirmo%20asistencia" class="btn">Confirmar Asistencia</a>
+            <a href="https://wa.me/593988456721?text=Hola!%20Confirmo%20asistencia%20a%20tus%20XV%20Isabel" class="btn">Confirmar Asistencia</a>
         </section>
     </div>
 
     <script>
         function abrirInvitacion() {
-            document.getElementById('miMusica').play().catch(e => {});
+            const audio = document.getElementById('miMusica');
+            audio.play().catch(e => console.log("Audio bloqueado por navegador"));
             
             document.getElementById('portada-wrapper').classList.add('hidden');
             document.getElementById('main-content').style.display = 'block';
@@ -263,10 +263,10 @@
             }, 400);
 
             confetti({
-                particleCount: 100,
+                particleCount: 150,
                 spread: 70,
                 origin: { y: 0.6 },
-                colors: ['#FFD700', '#D4AF37']
+                colors: ['#FFD700', '#D4AF37', '#ffffff']
             });
         }
     </script>
