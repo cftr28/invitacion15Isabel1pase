@@ -6,17 +6,13 @@
     
     <title>💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!</title>
     
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cftr28.github.io/invitacion15Isabel/">
-    <meta property="og:title" content="💌 ¡Estás invitado a Mis XV Años!">
-    <meta property="og:description" content="Acompáñame a celebrar este día tan especial. Isabel Kathalina.">
-    
-    <meta property="og:image" content="https://cftr28.github.io/invitacion15Isabel/preview.jpg?v=2">
-    <meta property="og:image:secure_url" content="https://cftr28.github.io/invitacion15Isabel/preview.jpg?v=2">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-
+<meta property="og:type" content="website">
+<meta property="og:title" content="💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!">
+<meta property="og:description" content="Acompáñame a celebrar este día tan especial. 18 de Abril 2026.">
+<meta property="og:image" content="https://raw.githubusercontent.com/cftr28/invitacion15Isabelpases/main/preview.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -24,10 +20,10 @@
     <style>
         :root {
             --oro-deep: #b59410;
-            --oro-brillante: #f9e18e;
+            --oro-brillante: #d4af37;
             --oro-metalico: linear-gradient(135deg, #d4af37 0%, #f9e18e 50%, #b59410 100%);
             --text-dark: #5c4b1a;
-            --white-glass: rgba(255, 255, 255, 0.92);
+            --white-glass: rgba(255, 255, 255, 0.95);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -74,11 +70,6 @@
             animation: flotar 3s infinite ease-in-out;
         }
 
-        @keyframes flotar {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
         #portada-wrapper.hidden { opacity: 0; visibility: hidden; }
         #main-content { display: none; position: relative; z-index: 1; }
 
@@ -93,42 +84,159 @@
             position: relative;
         }
 
-        .nombre-container {
-            transform: translateY(-40px); 
-            width: 90%;
-            max-width: 600px;
+        .fecha-top {
+            font-weight: 600;
+            letter-spacing: 4px;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: var(--oro-deep);
         }
 
         .nombre-container h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(55px, 15vw, 100px); 
-            opacity: 0;
+            font-size: clamp(60px, 15vw, 100px); 
             color: var(--oro-deep);
-            filter: drop-shadow(2px 2px 1px rgba(0,0,0,0.1));
-            margin-bottom: 5px;
-            line-height: 1.2;
+            line-height: 1.1;
         }
 
         .nombre-container p {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(50px, 13vw, 90px); 
-            opacity: 0;
-            background: var(--oro-metalico);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: clamp(75px, 22vw, 130px); 
+            color: #c5a022; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
             margin-top: -10px;
-            line-height: 1.1;
+            line-height: 1;
         }
 
-        .animate-name { animation: entradaNombre 1s forwards ease-out; }
-        .animate-sub { animation: entrada 1s forwards ease-out 0.4s; }
+        /* CONTADOR ESTILOS */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+        }
+        .time-box {
+            background: var(--oro-metalico);
+            color: white;
+            min-width: 65px;
+            padding: 10px 5px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .time-box span { display: block; font-size: 1.4rem; font-weight: 600; }
+        .time-box small { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        @keyframes entradaNombre { to { opacity: 1; transform: translateY(-10px); } }
-        @keyframes entrada { to { opacity: 1; transform: translateY(0); } }
+        /* ITINERARIO */
+        .luxury-itinerary {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
 
-        /* SECCIONES */
-        .section { padding: 40px 20px; text-align: center; }
-        .titulo-section { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--oro-deep); margin-bottom: 20px; }
+        .luxury-itinerary::before {
+            content: '';
+            position: absolute;
+            top: 0; bottom: 0;
+            left: 50px;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--oro-brillante), var(--oro-deep), transparent);
+        }
+
+        .itinerary-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-icon-wrap {
+            width: 50px;
+            height: 50px;
+            background: var(--oro-metalico);
+            border: 2px solid #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            margin-right: 20px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .step-icon-wrap i { font-size: 1.2rem; }
+
+        .step-info {
+            background: var(--white-glass);
+            padding: 15px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(181, 148, 16, 0.15);
+            flex-grow: 1;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+
+        .step-time {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--oro-deep);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .step-desc {
+            font-size: 1.05rem;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+
+        /* BOTONES FLOTANTES */
+        #music-control {
+            position: fixed;
+            bottom: 25px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: var(--oro-metalico);
+            border: 2px solid #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            z-index: 1000;
+            cursor: pointer;
+            display: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        #scroller-indicator {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            background-color: rgba(181, 148, 16, 0.95);
+            padding: 8px 15px;
+            border-radius: 25px;
+            z-index: 1000;
+            animation: bounce 2s infinite ease-in-out;
+            display: none;
+            transition: 0.4s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        #scroller-indicator span { font-size: 0.6rem; font-weight: bold; text-transform: uppercase; margin-top: 2px; }
+
+        /* SECCIONES COMUNES */
+        .section { padding: 60px 20px; text-align: center; }
+        .titulo-section { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--oro-deep); margin-bottom: 35px; }
 
         .card-info {
             max-width: 400px;
@@ -141,45 +249,31 @@
             backdrop-filter: blur(8px);
         }
 
-        .itinerary-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        .itinerary-item i {
-            font-size: 1.5rem;
-            width: 40px;
-            margin-right: 15px;
-            color: var(--oro-deep);
-        }
-        .itinerary-text b { display: block; font-size: 1rem; }
-        .itinerary-text span { font-size: 0.85rem; color: #777; }
-
         .btn {
             display: inline-block;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, var(--oro-deep), #d4af37);
+            padding: 14px 28px;
+            background: var(--oro-metalico);
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            margin-top: 10px;
             text-transform: uppercase;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
+            margin-top: 15px;
             letter-spacing: 1px;
             box-shadow: 0 4px 15px rgba(181, 148, 16, 0.3);
             border: none;
             cursor: pointer;
         }
-        
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -8px); } }
+        @keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
     </style>
 </head>
 <body>
 
     <div class="background-fixed"></div>
-    <audio id="miMusica" src="musica.mp3" preload="auto" loop></audio>
+    <audio id="miMusica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
 
     <div id="portada-wrapper" onclick="abrirInvitacion()">
         <div class="placa-oro">
@@ -188,98 +282,111 @@
         </div>
     </div>
 
+    <div id="music-control" onclick="toggleMusica()"><i id="music-icon" class="fa-solid fa-pause"></i></div>
+    <div id="scroller-indicator"><i class="fa-solid fa-chevron-down"></i><span>desliza</span></div>
+
     <div id="main-content">
         <section class="hero">
+            <div class="fecha-top">18 . ABRIL . 2026</div>
             <div class="nombre-container">
-                <h1 id="userName">Isabel Kathalina</h1>
-                <p id="userSub">Mis 15 Años</p>
+                <h1>Isabel Kathalina</h1>
+                <p>Mis 15 Años</p>
             </div>
-            <div id="indicador" style="position: absolute; bottom: 30px; color: var(--oro-deep); opacity: 0;">
-                <i class="fa-solid fa-chevron-down" style="animation: bounce 1.5s infinite;"></i>
+        </section>
+
+        <section class="section">
+            <h2 class="titulo-section">Un lugar para ti</h2>
+            <div class="card-info" style="border: 2px dashed var(--oro-deep); background: #fffaf0;">
+                <i class="fa-solid fa-star" style="color: var(--oro-deep); font-size: 1.8rem; margin-bottom: 12px;"></i>
+                <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 8px;">Pase Personal</p>
+                <p style="font-size: 0.95rem; font-style: italic; color: #8a6d0a; line-height: 1.5;">"He reservado <b>1 lugar</b> muy especial para compartir este momento contigo."</p>
+            </div>
+
+            <div id="timer-invitacion" style="margin-top: 30px;">
+                <p style="font-weight: 600; font-size: 0.8rem; color: var(--oro-deep); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">Faltan solo:</p>
+                <div class="countdown-container">
+                    <div class="time-box"><span id="days">00</span><small>Días</small></div>
+                    <div class="time-box"><span id="hours">00</span><small>Hrs</small></div>
+                    <div class="time-box"><span id="mins">00</span><small>Min</small></div>
+                    <div class="time-box"><span id="secs">00</span><small>Seg</small></div>
+                </div>
             </div>
         </section>
 
         <section class="section">
             <h2 class="titulo-section">Itinerario</h2>
-            <div class="card-info">
-                <div class="itinerary-item">
-                    <i class="fa-solid fa-church"></i>
-                    <div class="itinerary-text">
-                        <b>Misa de Acción de Gracias</b>
-                        <span>18:30 Horas</span>
+            <div class="luxury-itinerary">
+                <div class="itinerary-step">
+                    <div class="step-icon-wrap"><i class="fa-solid fa-church"></i></div>
+                    <div class="step-info">
+                        <span class="step-time">18:00 HRS</span>
+                        <p class="step-desc">Ceremonia Religiosa</p>
                     </div>
                 </div>
-                <div class="itinerary-item">
-                    <i class="fa-solid fa-champagne-glasses"></i>
-                    <div class="itinerary-text">
-                        <b>Recepción y Brindis</b>
-                        <span>20:00 Horas</span>
+                <div class="itinerary-step">
+                    <div class="step-icon-wrap"><i class="fa-solid fa-glass-cheers"></i></div>
+                    <div class="step-info">
+                        <span class="step-time">20:00 HRS</span>
+                        <p class="step-desc">Recepción y Brindis</p>
                     </div>
                 </div>
-                <div class="itinerary-item">
-                    <i class="fa-solid fa-cake-candles"></i>
-                    <div class="itinerary-text">
-                        <b>Cena y Protocolo</b>
-                        <span>21:00 Horas</span>
+                <div class="itinerary-step">
+                    <div class="step-icon-wrap"><i class="fa-solid fa-utensils"></i></div>
+                    <div class="step-info">
+                        <span class="step-time">21:00 HRS</span>
+                        <p class="step-desc">Cena de Gala</p>
                     </div>
                 </div>
-                <div class="itinerary-item">
-                    <i class="fa-solid fa-music"></i>
-                    <div class="itinerary-text">
-                        <b>¡A Celebrar!</b>
-                        <span>22:00 Horas</span>
+                <div class="itinerary-step">
+                    <div class="step-icon-wrap"><i class="fa-solid fa-cake-candles"></i></div>
+                    <div class="step-info">
+                        <span class="step-time">22:30 HRS</span>
+                        <p class="step-desc">Pastel y Sorpresas</p>
+                    </div>
+                </div>
+                <div class="itinerary-step">
+                    <div class="step-icon-wrap"><i class="fa-solid fa-music"></i></div>
+                    <div class="step-info">
+                        <span class="step-time">23:00 HRS</span>
+                        <p class="step-desc">Baile y Diversión</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <h2 class="titulo-section">¿Cómo llegar?</h2>
+            <h2 class="titulo-section">¿Dónde y Cuándo?</h2>
             <div class="card-info">
-                <h3 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--oro-deep);">Misa de Acción de Gracias</h3>
-                <p><i class="fa-solid fa-location-dot"></i> <strong>Iglesia San Cayetano</strong></p>
-                <p style="font-size: 0.85rem; margin-top: 5px;">Sector San Cayetano Alto, Loja</p>
-                <a href="https://maps.app.goo.gl/9yGgL8S7r2W8" target="_blank" class="btn">Abrir GPS Misa</a>
+                <i class="fa-solid fa-church" style="font-size: 2rem; color: var(--oro-deep); margin-bottom: 15px;"></i>
+                <h3 style="color: var(--oro-deep); margin-bottom: 10px;">Ceremonia Religiosa</h3>
+                <p><strong>Iglesia:</strong> Por Confirmar</p>
             </div>
-
             <div class="card-info">
-                <h3 style="margin-bottom: 10px; font-size: 1.1rem; color: var(--oro-deep);">Recepción</h3>
-                <p><i class="fa-solid fa-house-chimney"></i> <strong>Local "El Detalle"</strong></p>
-                <p style="font-size: 0.85rem; margin-top: 5px;">San Cayetano Alto, Calles José Coronel y Lauro Ludeña</p>
-                <a href="https://maps.app.goo.gl/9yGgL8S7r2W8" target="_blank" class="btn">Abrir GPS Recepción</a>
+                <i class="fa-solid fa-glass-cheers" style="font-size: 2rem; color: var(--oro-deep); margin-bottom: 15px;"></i>
+                <h3 style="color: var(--oro-deep); margin-bottom: 10px;">Recepción</h3>
+                <p><strong>Local "El Detalle"</strong></p>
+                <p style="font-size: 0.9rem; margin: 12px 0; line-height: 1.4;">San Cayetano Alto (Calles José Coronel y Lauro Ludeña)<br>Antes de la falla geológica</p>
+                <p><b>20:00 Horas</b></p>
+                <a href="https://maps.app.goo.gl/uX3L5q6J7Z..." target="_blank" class="btn">Ver Ubicación</a>
             </div>
         </section>
 
-        <section class="section">
-            <h2 class="titulo-section">Lluvia de Sobres</h2>
-            <div class="card-info" style="text-align: left;">
-                <p style="margin-bottom: 8px;"><i class="fa-solid fa-building-columns" style="color: var(--oro-deep);"></i> <strong>Banco de Loja</strong></p>
-                <p style="margin-bottom: 8px;"><i class="fa-solid fa-user" style="color: var(--oro-deep);"></i> <strong>Kathalina Sanchez</strong></p>
-                <p style="margin-bottom: 8px;"><i class="fa-solid fa-piggy-bank" style="color: var(--oro-deep);"></i> <strong>Cta Ahorros:</strong> 2905756512</p>
-                <p><i class="fa-solid fa-id-card" style="color: var(--oro-deep);"></i> <strong>C.I.:</strong> 1150700308</p>
-            </div>
-        </section>
-
-        <section class="section" style="padding-bottom: 100px;">
-            <a href="https://wa.me/593988456721?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20tus%20XV%20Isabel" class="btn" style="padding: 18px 40px; font-size: 0.9rem;">Confirmar Asistencia</a>
+        <section class="section" style="padding-bottom: 140px;">
+            <p style="margin-bottom: 25px; font-size: 1rem; color: var(--oro-deep); font-weight: 600;">¿Me acompañas?</p>
+            <a href="https://wa.me/593988456721?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20tus%20XV%20Isabel" class="btn" style="padding: 18px 45px;">Confirmar Asistencia</a>
         </section>
     </div>
 
     <script>
+        const audio = document.getElementById('miMusica');
+        const musicIcon = document.getElementById('music-icon');
+
         function abrirInvitacion() {
-            const audio = document.getElementById('miMusica');
-            audio.play().catch(e => console.log("Audio bloqueado hasta interacción"));
-            
+            audio.play().catch(e => console.log("Audio requiere interacción"));
             document.getElementById('portada-wrapper').classList.add('hidden');
             document.getElementById('main-content').style.display = 'block';
-
-            setTimeout(() => {
-                document.getElementById('userName').classList.add('animate-name');
-                document.getElementById('userSub').classList.add('animate-sub');
-                const indicador = document.getElementById('indicador');
-                indicador.style.opacity = '1';
-                indicador.style.transition = 'opacity 1s';
-            }, 300);
+            document.getElementById('music-control').style.display = 'flex';
+            document.getElementById('scroller-indicator').style.display = 'flex';
 
             confetti({
                 particleCount: 150,
@@ -288,6 +395,50 @@
                 colors: ['#FFD700', '#D4AF37', '#ffffff']
             });
         }
+
+        function toggleMusica() {
+            if (audio.paused) {
+                audio.play();
+                musicIcon.classList.replace('fa-play', 'fa-pause');
+            } else {
+                audio.pause();
+                musicIcon.classList.replace('fa-pause', 'fa-play');
+            }
+        }
+
+        window.onscroll = function() {
+            const scroller = document.getElementById('scroller-indicator');
+            if (window.scrollY > 50) {
+                scroller.style.opacity = '0';
+                scroller.style.visibility = 'hidden';
+            } else {
+                scroller.style.opacity = '1';
+                scroller.style.visibility = 'visible';
+            }
+        };
+
+        // LÓGICA DEL CONTADOR
+        const countdownDate = new Date("April 18, 2026 18:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = d;
+            document.getElementById("hours").innerHTML = h;
+            document.getElementById("mins").innerHTML = m;
+            document.getElementById("secs").innerHTML = s;
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer-invitacion").innerHTML = "<p style='color:var(--oro-deep); font-weight:bold;'>¡ES HOY!</p>";
+            }
+        }, 1000);
     </script>
 </body>
 </html>
