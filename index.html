@@ -6,13 +6,13 @@
     
     <title>💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!</title>
     
-<meta property="og:type" content="website">
-<meta property="og:title" content="💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!">
-<meta property="og:description" content="Acompáñame a celebrar este día tan especial. 18 de Abril 2026.">
-<meta property="og:image" content="https://raw.githubusercontent.com/cftr28/invitacion15Isabelpases/main/preview.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!">
+    <meta property="og:description" content="Acompáñame a celebrar este día tan especial. 18 de Abril 2026.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/cftr28/invitacion15Isabelpases/main/preview.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -60,11 +60,11 @@
         }
 
         .placa-oro {
-            width: 280px;
-            padding: 30px 20px;
+            width: 260px;
+            padding: 25px 15px;
             background: var(--oro-metalico);
             border: 2px solid #fff;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             border-radius: 15px;
             text-align: center;
             animation: flotar 3s infinite ease-in-out;
@@ -73,7 +73,7 @@
         #portada-wrapper.hidden { opacity: 0; visibility: hidden; }
         #main-content { display: none; position: relative; z-index: 1; }
 
-        /* HERO */
+        /* HERO - AJUSTE DE TAMAÑOS */
         .hero {
             height: 100vh;
             display: flex;
@@ -81,193 +81,109 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
         }
 
         .fecha-top {
             font-weight: 600;
-            letter-spacing: 4px;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
             color: var(--oro-deep);
         }
 
         .nombre-container h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(60px, 15vw, 100px); 
+            font-size: clamp(45px, 12vw, 75px); /* Reducido */
             color: var(--oro-deep);
             line-height: 1.1;
         }
 
         .nombre-container p {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(75px, 22vw, 130px); 
+            font-size: clamp(55px, 16vw, 90px); /* Reducido */
             color: #c5a022; 
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            margin-top: -10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+            margin-top: -5px;
             line-height: 1;
         }
 
-        /* CONTADOR ESTILOS */
+        /* CONTADOR */
         .countdown-container {
             display: flex;
             justify-content: center;
-            gap: 10px;
-            margin-top: 25px;
+            gap: 8px;
+            margin-top: 20px;
         }
         .time-box {
             background: var(--oro-metalico);
             color: white;
-            min-width: 65px;
-            padding: 10px 5px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            min-width: 55px; /* Más pequeño */
+            padding: 8px 4px;
+            border-radius: 10px;
         }
-        .time-box span { display: block; font-size: 1.4rem; font-weight: 600; }
-        .time-box small { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 1px; }
+        .time-box span { display: block; font-size: 1.1rem; font-weight: 600; }
+        .time-box small { font-size: 0.55rem; text-transform: uppercase; }
 
-        /* ITINERARIO */
-        .luxury-itinerary {
-            position: relative;
-            max-width: 500px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-
-        .luxury-itinerary::before {
-            content: '';
-            position: absolute;
-            top: 0; bottom: 0;
-            left: 50px;
-            width: 2px;
-            background: linear-gradient(to bottom, transparent, var(--oro-brillante), var(--oro-deep), transparent);
-        }
-
-        .itinerary-step {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .step-icon-wrap {
-            width: 50px;
-            height: 50px;
-            background: var(--oro-metalico);
-            border: 2px solid #fff;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-            margin-right: 20px;
-            color: white;
-            flex-shrink: 0;
-        }
-
-        .step-icon-wrap i { font-size: 1.2rem; }
-
-        .step-info {
-            background: var(--white-glass);
-            padding: 15px 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(181, 148, 16, 0.15);
-            flex-grow: 1;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.05);
-            text-align: left;
-        }
-
-        .step-time {
-            display: block;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--oro-deep);
-            letter-spacing: 1px;
-            margin-bottom: 4px;
-        }
-
-        .step-desc {
-            font-size: 1.05rem;
-            font-weight: 400;
-            color: var(--text-dark);
-        }
-
-        /* BOTONES FLOTANTES */
-        #music-control {
-            position: fixed;
-            bottom: 25px;
-            right: 20px;
-            width: 45px;
-            height: 45px;
-            background: var(--oro-metalico);
-            border: 2px solid #fff;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            z-index: 1000;
-            cursor: pointer;
-            display: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
+        /* SCROLLER INDICATOR - MÁS PEQUEÑO */
         #scroller-indicator {
             position: fixed;
-            bottom: 25px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             flex-direction: column;
             align-items: center;
             color: #fff;
-            background-color: rgba(181, 148, 16, 0.95);
-            padding: 8px 15px;
-            border-radius: 25px;
+            background-color: rgba(181, 148, 16, 0.9);
+            padding: 5px 12px; /* Más compacto */
+            border-radius: 20px;
             z-index: 1000;
             animation: bounce 2s infinite ease-in-out;
             display: none;
-            transition: 0.4s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
         }
+        #scroller-indicator i { font-size: 0.8rem; } /* Flecha pequeña */
+        #scroller-indicator span { font-size: 0.5rem; font-weight: bold; margin-top: 2px; }
 
-        #scroller-indicator span { font-size: 0.6rem; font-weight: bold; text-transform: uppercase; margin-top: 2px; }
-
-        /* SECCIONES COMUNES */
-        .section { padding: 60px 20px; text-align: center; }
-        .titulo-section { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--oro-deep); margin-bottom: 35px; }
-
+        /* RESTO DE ESTILOS */
+        .section { padding: 50px 20px; text-align: center; }
+        .titulo-section { font-family: 'Great Vibes', cursive; font-size: 2.8rem; color: var(--oro-deep); margin-bottom: 25px; }
+        
         .card-info {
-            max-width: 400px;
-            margin: 0 auto 20px;
+            max-width: 360px;
+            margin: 0 auto 15px;
             background: var(--white-glass);
-            padding: 25px;
-            border-radius: 20px;
+            padding: 20px;
+            border-radius: 15px;
             border: 1px solid rgba(181, 148, 16, 0.2);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
             backdrop-filter: blur(8px);
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 28px;
+            padding: 12px 24px;
             background: var(--oro-metalico);
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.8rem;
-            margin-top: 15px;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(181, 148, 16, 0.3);
+            font-size: 0.75rem;
+            margin-top: 10px;
             border: none;
             cursor: pointer;
         }
 
-        @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -8px); } }
-        @keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -5px); } }
+        @keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+        /* ITINERARIO COMPACTO */
+        .luxury-itinerary { position: relative; max-width: 450px; margin: 0 auto; padding: 10px 0; }
+        .itinerary-step { display: flex; align-items: center; margin-bottom: 25px; margin-left: 20px; }
+        .step-icon-wrap { width: 40px; height: 40px; background: var(--oro-metalico); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; flex-shrink: 0; margin-right: 15px; }
+        .step-info { background: var(--white-glass); padding: 10px 15px; border-radius: 10px; text-align: left; flex-grow: 1; }
+        .step-time { font-size: 0.7rem; color: var(--oro-deep); font-weight: bold; }
+        .step-desc { font-size: 0.95rem; }
     </style>
 </head>
 <body>
@@ -277,12 +193,15 @@
 
     <div id="portada-wrapper" onclick="abrirInvitacion()">
         <div class="placa-oro">
-            <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.2rem;">Isabel Kathalina</h2>
-            <p style="font-size: 0.7rem; letter-spacing: 2px; margin-top: 10px; font-weight: bold; color: white;">TOCA PARA ABRIR</p>
+            <h2 style="font-family: 'Great Vibes', cursive; font-size: 2rem;">Isabel Kathalina</h2>
+            <p style="font-size: 0.6rem; letter-spacing: 2px; margin-top: 8px; font-weight: bold; color: white;">TOCA PARA ABRIR</p>
         </div>
     </div>
 
-    <div id="music-control" onclick="toggleMusica()"><i id="music-icon" class="fa-solid fa-pause"></i></div>
+    <div id="music-control" onclick="toggleMusica()" style="position:fixed; bottom:20px; right:20px; width:40px; height:40px; background:var(--oro-metalico); border-radius:50%; display:none; justify-content:center; align-items:center; color:white; z-index:1001; cursor:pointer;">
+        <i id="music-icon" class="fa-solid fa-pause"></i>
+    </div>
+
     <div id="scroller-indicator"><i class="fa-solid fa-chevron-down"></i><span>desliza</span></div>
 
     <div id="main-content">
@@ -297,13 +216,13 @@
         <section class="section">
             <h2 class="titulo-section">Un lugar para ti</h2>
             <div class="card-info" style="border: 2px dashed var(--oro-deep); background: #fffaf0;">
-                <i class="fa-solid fa-star" style="color: var(--oro-deep); font-size: 1.8rem; margin-bottom: 12px;"></i>
-                <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 8px;">Pase Personal</p>
-                <p style="font-size: 0.95rem; font-style: italic; color: #8a6d0a; line-height: 1.5;">"He reservado <b>1 lugar</b> muy especial para compartir este momento contigo."</p>
+                <i class="fa-solid fa-star" style="color: var(--oro-deep); font-size: 1.5rem; margin-bottom: 10px;"></i>
+                <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 5px;">Pase Personal</p>
+                <p style="font-size: 0.85rem; font-style: italic; color: #8a6d0a; line-height: 1.4;">"He reservado <b>1 lugar</b> muy especial para compartir este momento contigo."</p>
             </div>
 
-            <div id="timer-invitacion" style="margin-top: 30px;">
-                <p style="font-weight: 600; font-size: 0.8rem; color: var(--oro-deep); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">Faltan solo:</p>
+            <div id="timer-invitacion" style="margin-top: 25px;">
+                <p style="font-weight: 600; font-size: 0.7rem; color: var(--oro-deep); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Faltan solo:</p>
                 <div class="countdown-container">
                     <div class="time-box"><span id="days">00</span><small>Días</small></div>
                     <div class="time-box"><span id="hours">00</span><small>Hrs</small></div>
@@ -318,38 +237,15 @@
             <div class="luxury-itinerary">
                 <div class="itinerary-step">
                     <div class="step-icon-wrap"><i class="fa-solid fa-church"></i></div>
-                    <div class="step-info">
-                        <span class="step-time">18:00 HRS</span>
-                        <p class="step-desc">Ceremonia Religiosa</p>
-                    </div>
+                    <div class="step-info"><span class="step-time">18:00 HRS</span><p class="step-desc">Ceremonia Religiosa</p></div>
                 </div>
                 <div class="itinerary-step">
                     <div class="step-icon-wrap"><i class="fa-solid fa-glass-cheers"></i></div>
-                    <div class="step-info">
-                        <span class="step-time">20:00 HRS</span>
-                        <p class="step-desc">Recepción y Brindis</p>
-                    </div>
+                    <div class="step-info"><span class="step-time">20:00 HRS</span><p class="step-desc">Recepción y Brindis</p></div>
                 </div>
                 <div class="itinerary-step">
                     <div class="step-icon-wrap"><i class="fa-solid fa-utensils"></i></div>
-                    <div class="step-info">
-                        <span class="step-time">21:00 HRS</span>
-                        <p class="step-desc">Cena de Gala</p>
-                    </div>
-                </div>
-                <div class="itinerary-step">
-                    <div class="step-icon-wrap"><i class="fa-solid fa-cake-candles"></i></div>
-                    <div class="step-info">
-                        <span class="step-time">22:30 HRS</span>
-                        <p class="step-desc">Pastel y Sorpresas</p>
-                    </div>
-                </div>
-                <div class="itinerary-step">
-                    <div class="step-icon-wrap"><i class="fa-solid fa-music"></i></div>
-                    <div class="step-info">
-                        <span class="step-time">23:00 HRS</span>
-                        <p class="step-desc">Baile y Diversión</p>
-                    </div>
+                    <div class="step-info"><span class="step-time">21:00 HRS</span><p class="step-desc">Cena de Gala</p></div>
                 </div>
             </div>
         </section>
@@ -357,23 +253,16 @@
         <section class="section">
             <h2 class="titulo-section">¿Dónde y Cuándo?</h2>
             <div class="card-info">
-                <i class="fa-solid fa-church" style="font-size: 2rem; color: var(--oro-deep); margin-bottom: 15px;"></i>
-                <h3 style="color: var(--oro-deep); margin-bottom: 10px;">Ceremonia Religiosa</h3>
-                <p><strong>Iglesia:</strong> Por Confirmar</p>
-            </div>
-            <div class="card-info">
-                <i class="fa-solid fa-glass-cheers" style="font-size: 2rem; color: var(--oro-deep); margin-bottom: 15px;"></i>
-                <h3 style="color: var(--oro-deep); margin-bottom: 10px;">Recepción</h3>
+                <i class="fa-solid fa-glass-cheers" style="font-size: 1.8rem; color: var(--oro-deep); margin-bottom: 10px;"></i>
+                <h3 style="color: var(--oro-deep); margin-bottom: 5px; font-size: 1.2rem;">Recepción</h3>
                 <p><strong>Local "El Detalle"</strong></p>
-                <p style="font-size: 0.9rem; margin: 12px 0; line-height: 1.4;">San Cayetano Alto (Calles José Coronel y Lauro Ludeña)<br>Antes de la falla geológica</p>
-                <p><b>20:00 Horas</b></p>
-                <a href="https://maps.app.goo.gl/uX3L5q6J7Z..." target="_blank" class="btn">Ver Ubicación</a>
+                <p style="font-size: 0.8rem; margin: 8px 0;">San Cayetano Alto (Calles José Coronel y Lauro Ludeña)</p>
+                <a href="https://maps.app.goo.gl/F6XvXvR6XvX" target="_blank" class="btn">Ver Ubicación</a>
             </div>
         </section>
 
-        <section class="section" style="padding-bottom: 140px;">
-            <p style="margin-bottom: 25px; font-size: 1rem; color: var(--oro-deep); font-weight: 600;">¿Me acompañas?</p>
-            <a href="https://wa.me/593988456721?text=¡Hola!%20Confirmo%20mi%20asistencia%20a%20tus%20XV%20Isabel" class="btn" style="padding: 18px 45px;">Confirmar Asistencia</a>
+        <section class="section" style="padding-bottom: 100px;">
+            <a href="https://wa.me/593988456721?text=¡Hola!%20Confirmo%20mi%20asistencia" class="btn" style="padding: 15px 35px;">Confirmar Asistencia</a>
         </section>
     </div>
 
@@ -417,27 +306,14 @@
             }
         };
 
-        // LÓGICA DEL CONTADOR
         const countdownDate = new Date("April 18, 2026 18:00:00").getTime();
-
-        const x = setInterval(function() {
+        setInterval(function() {
             const now = new Date().getTime();
             const distance = countdownDate - now;
-
-            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerHTML = d;
-            document.getElementById("hours").innerHTML = h;
-            document.getElementById("mins").innerHTML = m;
-            document.getElementById("secs").innerHTML = s;
-
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("timer-invitacion").innerHTML = "<p style='color:var(--oro-deep); font-weight:bold;'>¡ES HOY!</p>";
-            }
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("mins").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("secs").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
         }, 1000);
     </script>
 </body>
