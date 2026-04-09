@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!</title>
-    
+    <meta property="og:title" content="💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!">
+    <meta property="og:description" content="Acompáñame a celebrar este día tan especial. 18.04.2026">
+    <meta property="og:image" content="https://github.com/cftr28/invitacion15Isabelpases/blob/main/preview.png">
+    <meta property="og:type" content="website">
+
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -13,7 +17,7 @@
     <style>
         :root {
             --oro-oscuro: #8a6d0a; 
-            --oro-vivo: #c29b00e2; /* Dorado más vibrante para "Mis XV" */
+            --oro-vivo: #c29b00e2; 
             --oro-metalico: linear-gradient(135deg, #d4af37 0%, #f9e18e 50%, #b59410 100%);
             --text-dark: #443710; 
             --white-glass: rgba(255, 255, 255, 0.95);
@@ -61,18 +65,19 @@
             border-radius: 15px;
             text-align: center;
             animation: flotar 3s infinite ease-in-out;
+            margin-top: -100px;
         }
 
         #portada-wrapper.hidden { opacity: 0; visibility: hidden; }
         #main-content { display: none; position: relative; z-index: 1; }
 
-        /* HERO - ELEMENTOS MÁS ARRIBA */
+        /* HERO */
         .hero {
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start; /* Alineado arriba */
-            padding-top: 15vh; /* Espacio desde el borde superior */
+            justify-content: flex-start; 
+            padding-top: 20vh; 
             align-items: center;
             text-align: center;
         }
@@ -80,28 +85,29 @@
         .fecha-top {
             font-weight: 600;
             letter-spacing: 5px;
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-            color: var(--oro-oscuro);
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+            color: #ffffff; 
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
         }
 
         .nombre-container h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(50px, 14vw, 85px);
+            font-size: clamp(45px, 12vw, 70px); 
             color: var(--oro-oscuro); 
-            line-height: 1;
-            margin-bottom: 20px;
+            line-height: 1.1;
         }
 
         .nombre-container p {
             font-family: 'Great Vibes', cursive;
-            font-size: clamp(60px, 18vw, 100px);
-            color: var(--oro-vivo); /* Dorado más intenso */
+            font-size: clamp(55px, 16vw, 90px); 
+            color: var(--oro-vivo); 
             text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
             line-height: 0.9;
+            margin-top: 5px;
         }
 
-        /* INDICADOR DESLIZAR BLANCO */
+        /* INDICADOR DESLIZAR */
         #scroller-indicator {
             position: fixed;
             bottom: 25px;
@@ -110,36 +116,25 @@
             display: none;
             flex-direction: column;
             align-items: center;
-            color: #ffffff; /* Ahora es blanco */
-            text-shadow: 0px 0px 8px rgba(0,0,0,0.5); /* Sombra para que se vea en fondos claros */
+            color: #ffffff; 
+            text-shadow: 0px 0px 8px rgba(0,0,0,0.5); 
             z-index: 1000;
-            opacity: 0.9;
             animation: bounce 2s infinite ease-in-out;
+            transition: opacity 0.5s ease;
         }
-        #scroller-indicator i { font-size: 1.4rem; }
-        #scroller-indicator span { font-size: 0.6rem; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; margin-top: 5px; }
-
-        /* CONTADOR */
-        .countdown-container {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 20px;
-        }
-        .time-box {
-            background: var(--oro-metalico);
-            color: white;
-            min-width: 58px;
-            padding: 10px 5px;
-            border-radius: 12px;
-        }
-        .time-box span { display: block; font-size: 1.2rem; font-weight: 600; }
-        .time-box small { font-size: 0.55rem; text-transform: uppercase; }
 
         /* SECCIONES */
-        .section { padding: 70px 20px; text-align: center; }
-        .titulo-section { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--oro-oscuro); margin-bottom: 30px; }
+        .section { padding: 60px 20px; text-align: center; }
+        .titulo-section { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--oro-oscuro); margin-bottom: 25px; }
         
+        .frase-invitacion {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2rem;
+            color: var(--oro-oscuro);
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
         .card-info {
             max-width: 360px;
             margin: 0 auto 20px;
@@ -147,31 +142,31 @@
             padding: 30px 25px;
             border-radius: 20px;
             border: 1px solid rgba(138, 109, 10, 0.2);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
+
+        /* ITINERARIO TIMELINE */
+        .timeline { display: flex; flex-direction: column; gap: 20px; max-width: 320px; margin: 0 auto; }
+        .timeline-item { display: flex; align-items: center; gap: 15px; text-align: left; }
+        .timeline-icon {
+            width: 50px; height: 50px; background: var(--oro-metalico); border-radius: 50%;
+            display: flex; justify-content: center; align-items: center; color: white;
+            font-size: 1.2rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(138, 109, 10, 0.3);
+        }
+        .timeline-text strong { display: block; font-size: 0.9rem; color: var(--oro-oscuro); }
+        .timeline-text span { font-size: 1.1rem; font-weight: 500; }
 
         .btn {
-            display: inline-block;
-            padding: 14px 30px;
-            background: var(--oro-metalico);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            margin-top: 15px;
-            border: none;
-            cursor: pointer;
+            display: inline-block; padding: 14px 30px; background: var(--oro-metalico);
+            color: white; text-decoration: none; border-radius: 50px; font-weight: 600;
+            text-transform: uppercase; font-size: 0.8rem; border: none; margin-top: 10px;
         }
 
-        /* ITINERARIO */
-        .luxury-itinerary { position: relative; max-width: 450px; margin: 0 auto; }
-        .itinerary-step { display: flex; align-items: center; margin-bottom: 30px; margin-left: 20px; }
-        .step-icon-wrap { width: 45px; height: 45px; background: var(--oro-metalico); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; flex-shrink: 0; margin-right: 15px; }
-        .step-info { background: var(--white-glass); padding: 12px 18px; border-radius: 12px; text-align: left; flex-grow: 1; }
-        .step-time { font-size: 0.75rem; color: var(--oro-oscuro); font-weight: bold; }
-        .step-desc { font-size: 1rem; }
+        /* CONTADOR - AJUSTADO CON MARGEN SUPERIOR */
+        #timer-invitacion { margin-top: 40px; } 
+        .countdown-container { display: flex; justify-content: center; gap: 8px; }
+        .time-box { background: var(--oro-metalico); color: white; min-width: 60px; padding: 10px 5px; border-radius: 12px; }
+        .time-box span { display: block; font-size: 1.2rem; font-weight: 600; }
+        .time-box small { font-size: 0.6rem; text-transform: uppercase; }
 
         @keyframes bounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -10px); } }
         @keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
@@ -189,14 +184,14 @@
         </div>
     </div>
 
-    <div id="music-control" onclick="toggleMusica()" style="position:fixed; bottom:20px; right:20px; width:45px; height:45px; background:var(--oro-metalico); border-radius:50%; display:none; justify-content:center; align-items:center; color:white; z-index:1001; cursor:pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+    <div id="music-control" onclick="toggleMusica()" style="position:fixed; bottom:20px; right:20px; width:45px; height:45px; background:var(--oro-metalico); border-radius:50%; display:none; justify-content:center; align-items:center; color:white; z-index:1001; cursor:pointer;">
         <i id="music-icon" class="fa-solid fa-pause"></i>
     </div>
 
     <div id="scroller-indicator"><i class="fa-solid fa-chevron-down"></i><span>desliza</span></div>
 
     <div id="main-content">
-        <section class="hero">
+        <section class="hero" id="hero-section">
             <div class="fecha-top">18 . ABRIL . 2026</div>
             <div class="nombre-container">
                 <h1>Isabel Kathalina</h1>
@@ -205,15 +200,19 @@
         </section>
 
         <section class="section">
+            <p class="frase-invitacion">Hoy comienza una nueva etapa...</p>
+            <p style="font-size: 1.1rem; max-width: 300px; margin: 0 auto; line-height: 1.6;">
+                Te invito a celebrar mis <strong>XV Años</strong>, una noche mágica que deseo compartir contigo.
+            </p>
+        </section>
+
+        <section class="section">
             <h2 class="titulo-section">Un lugar para ti</h2>
             <div class="card-info" style="border: 2px dashed var(--oro-oscuro); background: #fffaf0;">
-                <i class="fa-solid fa-star" style="color: var(--oro-oscuro); font-size: 1.8rem; margin-bottom: 12px;"></i>
-                <p style="font-size: 1.2rem; font-weight: 600; margin-bottom: 8px;">Pase Personal</p>
-                <p style="font-size: 0.9rem; font-style: italic; color: #6e5606; line-height: 1.5;">"He reservado <b>1 lugar</b> muy especial para compartir este momento contigo."</p>
+                <p style="font-size: 1.1rem; font-weight: 600;">Pase Personal: 1 lugar</p>
             </div>
 
-            <div id="timer-invitacion" style="margin-top: 40px;">
-                <p style="font-weight: 600; font-size: 0.75rem; color: var(--oro-oscuro); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px;">Faltan solo:</p>
+            <div id="timer-invitacion">
                 <div class="countdown-container">
                     <div class="time-box"><span id="days">00</span><small>Días</small></div>
                     <div class="time-box"><span id="hours">00</span><small>Hrs</small></div>
@@ -225,45 +224,38 @@
 
         <section class="section">
             <h2 class="titulo-section">Itinerario</h2>
-            <div class="luxury-itinerary">
-                <div class="itinerary-step">
-                    <div class="step-icon-wrap"><i class="fa-solid fa-church"></i></div>
-                    <div class="step-info"><span class="step-time">18:00 HRS</span><p class="step-desc">Ceremonia Religiosa</p></div>
-                </div>
-                <div class="itinerary-step">
-                    <div class="step-icon-wrap"><i class="fa-solid fa-glass-cheers"></i></div>
-                    <div class="step-info"><span class="step-time">20:00 HRS</span><p class="step-desc">Recepción y Brindis</p></div>
-                </div>
-                <div class="itinerary-step">
-                    <div class="step-icon-wrap"><i class="fa-solid fa-utensils"></i></div>
-                    <div class="step-info"><span class="step-time">21:00 HRS</span><p class="step-desc">Cena de Gala</p></div>
+            <div class="card-info">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fa-solid fa-church"></i></div>
+                        <div class="timeline-text"><strong>18:00 HRS</strong><span>Ceremonia Religiosa</span></div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-icon"><i class="fa-solid fa-glass-cheers"></i></div>
+                        <div class="timeline-text"><strong>20:00 HRS</strong><span>Recepción y Brindis</span></div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="section">
-            <h2 class="titulo-section">¿Dónde y Cuándo?</h2>
-            
+            <h2 class="titulo-section">Ubicación</h2>
             <div class="card-info">
-                <i class="fa-solid fa-church" style="font-size: 2rem; color: var(--oro-oscuro); margin-bottom: 12px;"></i>
-                <h3 style="color: var(--oro-oscuro); margin-bottom: 8px; font-size: 1.3rem;">Ceremonia</h3>
-                <p><strong>Iglesia: Por Confirmar</strong></p>
-                <p style="font-size: 0.9rem; margin: 10px 0;">Hora: 18:00 hrs</p>
-                <a href="#" target="_blank" class="btn"><i class="fa-solid fa-location-dot"></i> GPS Misa</a>
+                <i class="fa-solid fa-church" style="color: var(--oro-oscuro); font-size: 1.5rem; margin-bottom: 10px;"></i>
+                <p><strong>Misa de Acción de Gracias</strong></p>
+                <p style="font-size: 0.85rem; margin-bottom: 10px;">Catedral de Loja</p>
+                <a href="https://maps.app.goo.gl/Z8vXv" target="_blank" class="btn">Mapa Iglesia</a>
             </div>
-
             <div class="card-info">
-                <i class="fa-solid fa-glass-cheers" style="font-size: 2rem; color: var(--oro-oscuro); margin-bottom: 12px;"></i>
-                <h3 style="color: var(--oro-oscuro); margin-bottom: 8px; font-size: 1.3rem;">Recepción</h3>
-                <p><strong>Local "El Detalle"</strong></p>
-                <p style="font-size: 0.85rem; margin: 10px 0; line-height: 1.5;">San Cayetano Alto (Calles José Coronel y Lauro Ludeña)<br>Antes de la falla geológica</p>
-                <p style="font-weight: bold; color: var(--oro-oscuro);">20:00 HRS</p>
-                <a href="https://maps.google.com" target="_blank" class="btn"><i class="fa-solid fa-location-dot"></i> GPS Local</a>
+                <i class="fa-solid fa-glass-cheers" style="color: var(--oro-oscuro); font-size: 1.5rem; margin-bottom: 10px;"></i>
+                <p><strong>Recepción</strong></p>
+                <p style="font-size: 0.85rem; margin-bottom: 10px;">Local "El Detalle" - San Cayetano Alto</p>
+                <a href="https://maps.app.goo.gl/Z8vXv" target="_blank" class="btn">Mapa Recepción</a>
             </div>
         </section>
 
         <section class="section" style="padding-bottom: 140px;">
-            <a href="https://wa.me/593988456721?text=¡Hola!%20Confirmo%20mi%20asistencia" class="btn" style="padding: 16px 40px; font-size: 0.9rem;">Confirmar Asistencia</a>
+            <a href="https://wa.me/593988456721?text=¡Hola!%20Confirmo%20mi%20asistencia" class="btn">Confirmar Asistencia</a>
         </section>
     </div>
 
@@ -273,37 +265,29 @@
         const scroller = document.getElementById('scroller-indicator');
 
         function abrirInvitacion() {
-            audio.play().catch(e => console.log("Audio requiere interacción"));
+            audio.play().catch(e => console.log("Audio bloqueado"));
             document.getElementById('portada-wrapper').classList.add('hidden');
             document.getElementById('main-content').style.display = 'block';
             document.getElementById('music-control').style.display = 'flex';
             scroller.style.display = 'flex';
-
-            confetti({
-                particleCount: 150,
-                spread: 70,
-                origin: { y: 0.6 },
-                colors: ['#FFD700', '#D4AF37', '#ffffff']
-            });
+            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#FFD700', '#D4AF37', '#ffffff'] });
         }
 
         function toggleMusica() {
-            if (audio.paused) {
-                audio.play();
-                musicIcon.classList.replace('fa-play', 'fa-pause');
-            } else {
-                audio.pause();
-                musicIcon.classList.replace('fa-pause', 'fa-play');
-            }
+            if (audio.paused) { audio.play(); musicIcon.classList.replace('fa-play', 'fa-pause'); } 
+            else { audio.pause(); musicIcon.classList.replace('fa-pause', 'fa-play'); }
         }
 
-        window.onscroll = function() {
-            if (window.scrollY > 40) {
+        window.addEventListener('scroll', function() {
+            let heroHeight = document.getElementById('hero-section').offsetHeight;
+            if (window.scrollY > (heroHeight * 0.3)) {
                 scroller.style.opacity = '0';
+                setTimeout(() => { scroller.style.display = 'none'; }, 500);
             } else {
-                scroller.style.opacity = '0.9';
+                scroller.style.display = 'flex';
+                scroller.style.opacity = '1';
             }
-        };
+        });
 
         const countdownDate = new Date("April 18, 2026 18:00:00").getTime();
         setInterval(function() {
