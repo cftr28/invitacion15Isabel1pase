@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>💌 ¡Mis XV Años: Isabel Kathalina!</title>
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!">
-    <meta property="og:description" content="Acompáñame a celebrar este día tan especial. 18.04.2026">
-
-    
     <meta property="og:image" content="https://cftr28.github.io/invitacion15Isabel1pase/preview.png">
     <meta property="og:image:secure_url" content="https://cftr28.github.io/invitacion15Isabel1pase/preview.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="600">
+    
+    <title>💌 ¡Mis XV Años: Isabel Kathalina!</title>
+    <meta property="og:title" content="💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!">
+    <meta property="og:description" content="Acompáñame a celebrar este día tan especial. 18.04.2026">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://cftr28.github.io/invitacion15Isabel1pase/">
 
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
@@ -48,7 +47,6 @@
             overflow-x: hidden;
         }
 
-        /* PORTADA ESTILO SOBRE */
         #portada-wrapper {
             position: fixed;
             inset: 0;
@@ -79,13 +77,9 @@
             margin-top: -100px;
         }
 
-        /* Solapa Superior que se abre hacia arriba */
         .flap {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: var(--oro-metalico);
             clip-path: polygon(0 0, 100% 0, 50% 60%);
             transform-origin: top;
@@ -94,18 +88,9 @@
             border-top: 1px solid rgba(255,255,255,0.3);
         }
 
-        .envelope-text {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 10px;
-        }
+        .envelope-text { position: relative; z-index: 1; text-align: center; padding: 10px; }
 
-        /* Animación de apertura */
-        #portada-wrapper.open .flap {
-            transform: rotateX(180deg);
-        }
-        
+        #portada-wrapper.open .flap { transform: rotateX(180deg); }
         #portada-wrapper.open .envelope {
             transform: translateY(20px);
             opacity: 0;
@@ -115,7 +100,6 @@
         #portada-wrapper.hidden { opacity: 0; visibility: hidden; }
         #main-content { display: none; position: relative; z-index: 1; }
 
-        /* HERO */
         .hero {
             height: 100vh;
             display: flex;
@@ -153,8 +137,7 @@
 
         #scroller-indicator {
             position: fixed;
-            bottom: 25px;
-            left: 50%;
+            bottom: 25px; left: 50%;
             transform: translateX(-50%);
             display: none;
             flex-direction: column;
@@ -202,8 +185,6 @@
             text-transform: uppercase; font-size: 0.8rem; border: none; margin-top: 10px;
         }
 
-        #timer-invitacion { margin-top: 40px; } 
-        .countdown-container { display: flex; justify-content: center; gap: 8px; }
         .time-box { background: var(--oro-metalico); color: white; min-width: 60px; padding: 10px 5px; border-radius: 12px; }
         .time-box span { display: block; font-size: 1.2rem; font-weight: 600; }
         .time-box small { font-size: 0.6rem; text-transform: uppercase; }
@@ -256,7 +237,7 @@
             </div>
 
             <div id="timer-invitacion">
-                <div class="countdown-container">
+                <div style="display: flex; justify-content: center; gap: 8px;">
                     <div class="time-box"><span id="days">00</span><small>Días</small></div>
                     <div class="time-box"><span id="hours">00</span><small>Hrs</small></div>
                     <div class="time-box"><span id="mins">00</span><small>Min</small></div>
@@ -271,11 +252,11 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-icon"><i class="fa-solid fa-church"></i></div>
-                        <div class="timeline-text"><strong>18:00 HRS</strong><span>Ceremonia Religiosa</span></div>
+                        <div class="timeline-text"><strong>19:00 HRS</strong><span>Misa de Acción de Gracias</span></div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-icon"><i class="fa-solid fa-glass-cheers"></i></div>
-                        <div class="timeline-text"><strong>20:00 HRS</strong><span>Recepción y Brindis</span></div>
+                        <div class="timeline-text"><strong>20:30 HRS</strong><span>Recepción y Brindis</span></div>
                     </div>
                 </div>
             </div>
@@ -285,21 +266,25 @@
             <h2 class="titulo-section">Ubicación</h2>
             <div class="card-info">
                 <i class="fa-solid fa-church" style="color: var(--oro-oscuro); font-size: 1.5rem; margin-bottom: 10px;"></i>
-                <p><strong>Misa de Acción de Gracias</strong></p>
-                <p style="font-size: 0.85rem; margin-bottom: 10px;">Catedral de Loja</p>
-                <a href="https://maps.google.com" target="_blank" class="btn">Mapa Iglesia</a>
-            </div>
+                <p><strong>Iglesia Católica Cristo Rey</strong></p>
+                <p style="font-size: 0.85rem; margin-bottom: 10px;">Ceremonia Religiosa</p>
+<a href="https://maps.app.goo.gl/Q4wbeu1jtvXUfb226" target="_blank" class="btn">Abrir Ubicación Iglesia</a>            </div>
+
             <div class="card-info">
                 <i class="fa-solid fa-glass-cheers" style="color: var(--oro-oscuro); font-size: 1.5rem; margin-bottom: 10px;"></i>
-                <p><strong>Recepción</strong></p>
-                <p style="font-size: 0.85rem; margin-bottom: 10px;">Local "El Detalle" - San Cayetano Alto</p>
-                <a href="https://maps.google.com" target="_blank" class="btn">Mapa Recepción</a>
+                <p><strong>Local: "EL DETALLE"</strong></p>
+                <p style="font-size: 0.85rem; margin-bottom: 5px; font-weight: 600;">San Cayetano Alto</p>
+                <p style="font-size: 0.8rem; line-height: 1.4; margin-bottom: 10px;">
+                    Calles José Coronel y Lauro Ludeña<br>
+                    (Antes de la falla geológica)
+                </p>
+                <a href="https://maps.app.goo.gl/vVbbNPyTm2ERpscN7" target="_blank" class="btn">Ver Mapa Recepción</a>
             </div>
         </section>
 
         <section class="section" style="padding-bottom: 140px;">
-            <a href="https://wa.me/593988456721?text=¡Hola!%20Confirmo%20mi%20asistencia" class="btn">Confirmar Asistencia</a>
-        </section>
+    <a href="https://wa.me/593967992292?text=¡Hola!%20Confirmo%20asistencia%20a%20los%20XV%20de%20Isabel.%20Nombres:%20" class="btn">Confirmar Asistencia</a>
+</section>
     </div>
 
     <script>
@@ -310,7 +295,6 @@
 
         function abrirInvitacion() {
             wrapper.classList.add('open');
-            
             setTimeout(() => {
                 audio.play().catch(e => console.log("Audio bloqueado"));
                 wrapper.style.opacity = '0';
@@ -340,14 +324,14 @@
             }
         });
 
-        const countdownDate = new Date("April 18, 2026 18:00:00").getTime();
+        const countdownDate = new Date("April 18, 2026 19:00:00").getTime();
         setInterval(function() {
             const now = new Date().getTime();
             const distance = countdownDate - now;
-            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("mins").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("secs").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("days").innerHTML = Math.max(0, Math.floor(distance / (1000 * 60 * 60 * 24)));
+            document.getElementById("hours").innerHTML = Math.max(0, Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            document.getElementById("mins").innerHTML = Math.max(0, Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)));
+            document.getElementById("secs").innerHTML = Math.max(0, Math.floor((distance % (1000 * 60)) / 1000));
         }, 1000);
     </script>
 </body>
