@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
-    <title>💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!</title>
+    <title>💌 ¡Mis XV Años: Isabel Kathalina!</title>
     <meta property="og:type" content="website">
     <meta property="og:title" content="💌 ¡Estás invitado a Mis XV Años: Isabel Kathalina!">
     <meta property="og:description" content="Acompáñame a celebrar este día tan especial. 18.04.2026">
-    <meta property="og:url" content="https://cftr28.github.io/invitacion15Isabelpases/">
+
     
-    <meta property="og:image" content="https://cftr28.github.io/invitacion15Isabelpases/preview.png">
-    <meta property="og:image:secure_url" content="https://cftr28.github.io/invitacion15Isabelpases/preview.png">
+    <meta property="og:image" content="https://cftr28.github.io/invitacion15Isabel1pase/preview.png">
+    <meta property="og:image:secure_url" content="https://cftr28.github.io/invitacion15Isabel1pase/preview.png">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="300">
     <meta property="og:image:height" content="300">
+    <meta property="og:url" content="https://cftr28.github.io/invitacion15Isabel1pase/">
 
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -47,7 +48,7 @@
             overflow-x: hidden;
         }
 
-        /* PORTADA */
+        /* PORTADA ESTILO SOBRE */
         #portada-wrapper {
             position: fixed;
             inset: 0;
@@ -59,19 +60,56 @@
             justify-content: center; 
             align-items: center;
             cursor: pointer;
-            transition: opacity 0.8s ease, visibility 0.8s;
+            perspective: 1000px;
+            transition: opacity 0.8s ease;
         }
 
-        .placa-oro {
-            width: 200px;
-            padding: 15px 10px;
+        .envelope {
+            position: relative;
+            width: 220px;
+            height: 140px;
             background: var(--oro-metalico);
-            border: 2px solid #fff;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            border-radius: 15px;
-            text-align: center;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             animation: flotar 3s infinite ease-in-out;
+            transform-style: preserve-3d;
             margin-top: -100px;
+        }
+
+        /* Solapa Superior que se abre hacia arriba */
+        .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--oro-metalico);
+            clip-path: polygon(0 0, 100% 0, 50% 60%);
+            transform-origin: top;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 3;
+            border-top: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .envelope-text {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Animación de apertura */
+        #portada-wrapper.open .flap {
+            transform: rotateX(180deg);
+        }
+        
+        #portada-wrapper.open .envelope {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease 0.4s;
         }
 
         #portada-wrapper.hidden { opacity: 0; visibility: hidden; }
@@ -180,9 +218,12 @@
     <audio id="miMusica" loop><source src="musica.mp3" type="audio/mpeg"></audio>
 
     <div id="portada-wrapper" onclick="abrirInvitacion()">
-        <div class="placa-oro">
-            <h2 style="font-family: 'Great Vibes', cursive; font-size: 2.2rem;">Isabel Kathalina</h2>
-            <p style="font-size: 0.65rem; letter-spacing: 2px; margin-top: 10px; font-weight: bold; color: white;">TOCA PARA ABRIR</p>
+        <div class="envelope">
+            <div class="flap"></div>
+            <div class="envelope-text">
+                <h2 style="font-family: 'Great Vibes', cursive; font-size: 1.3rem; color: white;">Isabel Kathalina</h2>
+                <p style="font-size: 0.5rem; letter-spacing: 2px; margin-top: 5px; font-weight: bold; color: white;">TOCA PARA ABRIR</p>
+            </div>
         </div>
     </div>
 
@@ -246,13 +287,13 @@
                 <i class="fa-solid fa-church" style="color: var(--oro-oscuro); font-size: 1.5rem; margin-bottom: 10px;"></i>
                 <p><strong>Misa de Acción de Gracias</strong></p>
                 <p style="font-size: 0.85rem; margin-bottom: 10px;">Catedral de Loja</p>
-                <a href="https://maps.app.goo.gl/9yGvG5vX6R7J6" target="_blank" class="btn">Mapa Iglesia</a>
+                <a href="https://maps.google.com" target="_blank" class="btn">Mapa Iglesia</a>
             </div>
             <div class="card-info">
                 <i class="fa-solid fa-glass-cheers" style="color: var(--oro-oscuro); font-size: 1.5rem; margin-bottom: 10px;"></i>
                 <p><strong>Recepción</strong></p>
                 <p style="font-size: 0.85rem; margin-bottom: 10px;">Local "El Detalle" - San Cayetano Alto</p>
-                <a href="https://maps.app.goo.gl/9yGvG5vX6R7J6" target="_blank" class="btn">Mapa Recepción</a>
+                <a href="https://maps.google.com" target="_blank" class="btn">Mapa Recepción</a>
             </div>
         </section>
 
@@ -265,14 +306,22 @@
         const audio = document.getElementById('miMusica');
         const musicIcon = document.getElementById('music-icon');
         const scroller = document.getElementById('scroller-indicator');
+        const wrapper = document.getElementById('portada-wrapper');
 
         function abrirInvitacion() {
-            audio.play().catch(e => console.log("Audio bloqueado"));
-            document.getElementById('portada-wrapper').classList.add('hidden');
-            document.getElementById('main-content').style.display = 'block';
-            document.getElementById('music-control').style.display = 'flex';
-            scroller.style.display = 'flex';
-            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#FFD700', '#D4AF37', '#ffffff'] });
+            wrapper.classList.add('open');
+            
+            setTimeout(() => {
+                audio.play().catch(e => console.log("Audio bloqueado"));
+                wrapper.style.opacity = '0';
+                setTimeout(() => {
+                    wrapper.classList.add('hidden');
+                    document.getElementById('main-content').style.display = 'block';
+                    document.getElementById('music-control').style.display = 'flex';
+                    scroller.style.display = 'flex';
+                    confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#FFD700', '#D4AF37', '#ffffff'] });
+                }, 400);
+            }, 800);
         }
 
         function toggleMusica() {
